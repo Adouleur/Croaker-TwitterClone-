@@ -4,7 +4,9 @@ import fetcher from "@/libs/fetcher";
 
 const usePost = (postId: string) => {
   const { data, error, isLoading, mutate } = useSWR(
-    postId ? `/api/posts/${postId}` : null,
+    postId
+      ? `https://croaker-twitter-clone.vercel.app/api/posts/${postId}`
+      : null,
     fetcher,
   );
 
